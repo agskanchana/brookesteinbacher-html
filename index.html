@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brooke Steinbacher - Visual Artist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>BROOKE STEINBACHER</h1>
+                <span class="subtitle">VISUAL ARTIST</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="paintings.html" class="nav-link">PAINTINGS</a></li>
+                <li><a href="drawings.html" class="nav-link">DRAWINGS</a></li>
+                <li><a href="other.html" class="nav-link">OTHER WORKS</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-subtitle">CONTEMPORARY</div>
+                <h1 class="hero-title">
+                    <span class="title-line">VISUAL</span>
+                    <span class="title-line accent">ARTIST</span>
+                </h1>
+                <div class="hero-description">
+                    <p>Exploring the boundaries between emotion and expression through bold colors, dynamic forms, and innovative techniques.</p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#gallery" class="btn-primary">EXPLORE WORK</a>
+                    <a href="about.html" class="btn-secondary">LEARN MORE</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="float-item" style="--delay: 0s;">
+                        <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=300&h=400&fit=crop" alt="Artwork 1">
+                    </div>
+                    <div class="float-item" style="--delay: 0.5s;">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=250&h=350&fit=crop" alt="Artwork 2">
+                    </div>
+                    <div class="float-item" style="--delay: 1s;">
+                        <img src="https://images.unsplash.com/photo-1577720643271-9f36b04d43ec?w=280&h=380&fit=crop" alt="Artwork 3">
+                    </div>
+                </div>
+                <div class="hero-bg-text">ART</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text">SCROLL</div>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Snippet Section -->
+    <section class="about-snippet">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>ABOUT BROOKE</h2>
+                    <p>I am a contemporary visual artist whose work transcends traditional boundaries between abstract expressionism and figurative representation. My practice explores the delicate intersection of human emotion, natural forms, and urban landscapes through bold color palettes and dynamic compositions.</p>
+                    <p>Each piece is a dialogue between conscious intention and subconscious expression, seeking to create visual narratives that challenge perception and evoke profound emotional responses.</p>
+                    <a href="about.html" class="read-more-btn">READ MORE</a>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=500&h=600&fit=crop" alt="Brooke Steinbacher">
+                        <div class="image-overlay">
+                            <span>STUDIO BROOKLYN, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Categories Section -->
+    <section id="gallery" class="gallery-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>EXPLORE COLLECTIONS</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="categories-grid">
+                <!-- Paintings Category -->
+                <div class="category-card" data-category="paintings">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=600&h=700&fit=crop" alt="Paintings">
+                        <div class="category-overlay">
+                            <h3>PAINTINGS</h3>
+                            <p>Acrylic, Oil & Mixed Media</p>
+                            <div class="category-count">12 WORKS</div>
+                            <a href="paintings.html" class="category-btn">VIEW COLLECTION</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drawings Category -->
+                <div class="category-card" data-category="drawings">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=700&fit=crop" alt="Drawings">
+                        <div class="category-overlay">
+                            <h3>DRAWINGS</h3>
+                            <p>Charcoal, Graphite & Ink</p>
+                            <div class="category-count">8 WORKS</div>
+                            <a href="drawings.html" class="category-btn">VIEW COLLECTION</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Works Category -->
+                <div class="category-card" data-category="other">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&h=700&fit=crop" alt="Other Works">
+                        <div class="category-overlay">
+                            <h3>OTHER WORKS</h3>
+                            <p>Sculpture, Digital & Installations</p>
+                            <div class="category-count">6 WORKS</div>
+                            <a href="other.html" class="category-btn">VIEW COLLECTION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Gallery Preview -->
+            <div class="featured-preview">
+                <h3>FEATURED WORKS</h3>
+                <div class="preview-grid">
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=400&fit=crop" alt="Featured Work 1">
+                        <div class="preview-info">
+                            <h4>COLOR SYMPHONY</h4>
+                            <p>Mixed Media • 2024</p>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1577720643271-9f36b04d43ec?w=300&h=400&fit=crop" alt="Featured Work 2">
+                        <div class="preview-info">
+                            <h4>EMOTIONAL LANDSCAPE</h4>
+                            <p>Oil on Canvas • 2023</p>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=300&h=400&fit=crop" alt="Featured Work 3">
+                        <div class="preview-info">
+                            <h4>FIGURE IN MOTION</h4>
+                            <p>Charcoal • 2024</p>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=300&h=400&fit=crop" alt="Featured Work 4">
+                        <div class="preview-info">
+                            <h4>URBAN DREAMS</h4>
+                            <p>Acrylic on Canvas • 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>LET'S CREATE TOGETHER</h2>
+                <p>Available for commissions, exhibitions, and collaborations</p>
+                <div class="cta-buttons">
+                    <a href="mailto:brooke@brookesteinbacher.com" class="btn-primary">GET IN TOUCH</a>
+                    <div class="contact-info">
+                        <span>BROOKLYN STUDIO</span>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>BROOKE STEINBACHER</h3>
+                    <p>Visual Artist</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" target="_blank">INSTAGRAM</a>
+                        <a href="#" target="_blank">FACEBOOK</a>
+                        <a href="#" target="_blank">LINKEDIN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BROOKE STEINBACHER. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
