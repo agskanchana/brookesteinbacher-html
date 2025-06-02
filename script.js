@@ -77,17 +77,26 @@ const observer = new IntersectionObserver((entries) => {
 
 // Animate elements on scroll
 document.addEventListener('DOMContentLoaded', () => {
-    // Animate grid items
-    const gridItems = document.querySelectorAll('.grid-item, .gallery-item, .exp-item');
-    gridItems.forEach((item, index) => {
+    // Animate collection sections
+    const collectionSections = document.querySelectorAll('.collection-section');
+    collectionSections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = `opacity 0.8s ease ${index * 0.3}s, transform 0.8s ease ${index * 0.3}s`;
+        observer.observe(section);
+    });
+
+    // Animate gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach((item, index) => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(50px)';
-        item.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = `opacity 0.6s ease ${(index * 0.1) + 0.5}s, transform 0.6s ease ${(index * 0.1) + 0.5}s`;
         observer.observe(item);
     });
 
     // Animate text blocks
-    const textBlocks = document.querySelectorAll('.text-block, .section-header');
+    const textBlocks = document.querySelectorAll('.section-header, .gallery-cta');
     textBlocks.forEach((block, index) => {
         block.style.opacity = '0';
         block.style.transform = 'translateY(30px)';
@@ -96,30 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBackground = document.querySelector('.hero-background img');
-    if (heroBackground) {
-        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Collection section hover effects
+document.querySelectorAll('.collection-section').forEach(section => {
+    section.addEventListener('mouseenter', () => {
+        section.style.zIndex = '10';
+    });
 
-// Gallery item click functionality
-document.querySelectorAll('.grid-item, .gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-        // Add lightbox functionality here
-        console.log('Gallery item clicked');
+    section.addEventListener('mouseleave', () => {
+        section.style.zIndex = '1';
     });
 });
 
-// Custom cursor effect
-document.addEventListener('mousemove', (e) => {
-    const cursor = document.querySelector('.custom-cursor');
-    if (cursor) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    }
+// Gallery item click effects
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+        // Add click animation
+        item.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            item.style.transform = '';
+        }, 150);
+    });
 });
 
 // Hamburger animation
@@ -129,71 +134,5 @@ hamburger.addEventListener('click', () => {
         span.style.transform = hamburger.classList.contains('active')
             ? `rotate(${index === 1 ? 0 : index === 0 ? 45 : -45}deg) translate(${index === 0 ? '5px, 5px' : index === 2 ? '5px, -5px' : '0, 0'})`
             : 'none';
-    });
-});
-
-
-
-// Gallery Filter Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                const itemCategory = item.getAttribute('data-category');
-
-                if (filterValue === 'all' || itemCategory === filterValue) {
-                    item.classList.remove('hidden');
-                    item.style.display = 'block';
-                } else {
-                    item.classList.add('hidden');
-                    setTimeout(() => {
-                        if (item.classList.contains('hidden')) {
-                            item.style.display = 'none';
-                        }
-                    }, 400);
-                }
-            });
-        });
-    });
-
-    // Gallery item hover effects
-    galleryItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.zIndex = '10';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            item.style.zIndex = '1';
-        });
-    });
-
-    // Smooth scroll animation for gallery items
-    const observeGalleryItems = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    galleryItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(50px)';
-        item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observeGalleryItems.observe(item);
     });
 });
